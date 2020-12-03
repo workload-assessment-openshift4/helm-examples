@@ -57,7 +57,7 @@ service:
   port: 8080
 
 configmap:
-  greeting: "Greetings"
+  greeting: "Greetings to the"
 
 ingress:
   enabled: false
