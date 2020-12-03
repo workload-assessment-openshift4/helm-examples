@@ -41,6 +41,9 @@ service:
   type: ClusterIP
   port: 8080
 
+configmap:
+  greeting: "Greetings"
+
 ingress:
   enabled: false
   annotations: {}
@@ -81,3 +84,5 @@ affinity: {}
 
 cluster:
   baseDomain: apps.cluster-82de.sandbox1349.opentlc.com
+
+
