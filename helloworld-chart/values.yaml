@@ -36,6 +36,21 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 120
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+
 service:
   name: fuse7hello
   type: ClusterIP
@@ -81,8 +96,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-cluster:
-  baseDomain: apps.cluster-82de.sandbox1349.opentlc.com
-
-
