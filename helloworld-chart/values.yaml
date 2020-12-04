@@ -36,6 +36,8 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+handlerPath: /actuator/health
+
 livenessProbe:
   enabled: true
   initialDelaySeconds: 120
