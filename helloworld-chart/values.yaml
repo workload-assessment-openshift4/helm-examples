@@ -4,6 +4,8 @@
 
 replicaCount: 1
 
+domain: apps.cluster-ccf2.sandbox801.opentlc.com
+
 image:
   repository: quay.io/bszeti/fuse7hello
   pullPolicy: IfNotPresent
@@ -64,10 +66,9 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: chart-example.local
-      paths: []
+  host: fuseapp-example
   tls: []
+
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
