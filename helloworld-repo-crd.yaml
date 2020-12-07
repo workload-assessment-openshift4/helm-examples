@@ -1,9 +1,0 @@
-apiVersion: helm.openshift.io/v1beta1
-kind: HelmChartRepository
-metadata:
-  name: helloworld-repo
-spec:
- # optional name that might be used by console
-  name: Hello-World
-  connectionConfig:
-    url: https://workload-assessment-openshift4.github.io/helm-examples/
