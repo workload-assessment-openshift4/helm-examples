@@ -40,13 +40,14 @@ helm.sh/chart: {{ include "helloworld-chart.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+appName: {{ include "helloworld-chart.name" . }}
 {{- end }}
 
 {{/*
 Selector labels
 */}}
 {{- define "helloworld-chart.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "helloworld-chart.name" . }}
+appName: {{ include "helloworld-chart.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 

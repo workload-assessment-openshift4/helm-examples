@@ -36,13 +36,33 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+handlerPath: /actuator/health
+
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 120
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+
 service:
   name: fuse7hello
   type: ClusterIP
   port: 8080
 
+configmap:
+  greeting: "Greetings to the"
+
 ingress:
-  enabled: false
+  enabled: true
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
@@ -72,12 +92,3 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
-
-cluster:
-  baseDomain: apps.cluster-82de.sandbox1349.opentlc.com

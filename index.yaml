@@ -1,0 +1,34 @@
+apiVersion: v1
+entries:
+  helloworld-chart:
+  - apiVersion: v2
+    appVersion: 1.19.0
+    created: "2020-12-04T14:33:43.597967655-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 708b3cb8b19eccd71c5f59157ae1ce927faa0138c4447cb44ca587e276f84cad
+    name: helloworld-chart
+    type: application
+    urls:
+    - https://workload-assessment-openshift4.github.io/helm-examples/helloworld-chart-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.18.0
+    created: "2020-12-04T14:33:43.597332863-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 5f6529c53a84e84c3ebe86e79b2970dcf66aae8dd6fccb86348b604ef8db9d1e
+    name: helloworld-chart
+    type: application
+    urls:
+    - https://workload-assessment-openshift4.github.io/helm-examples/helloworld-chart-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.17.0
+    created: "2020-12-04T14:33:43.596699067-05:00"
+    description: A Helm chart for Kubernetes
+    digest: ad9edd115c0c8e4ee5d675537b7df5b23ef9bab9ee69ea618db90dfd9ebbde2c
+    name: helloworld-chart
+    type: application
+    urls:
+    - https://workload-assessment-openshift4.github.io/helm-examples/helloworld-chart-0.2.0.tgz
+    version: 0.2.0
+generated: "2020-12-04T14:33:43.595742061-05:00"
