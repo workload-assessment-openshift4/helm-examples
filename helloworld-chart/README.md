@@ -1,7 +1,7 @@
 # Application
 This chart will deploy a simple SPring Boot application 
 
-# Installation Guide
+## Installation Guide
 
 1. After checking out the repo, Run the following command in *this* directory: 
 
@@ -9,6 +9,5 @@ This chart will deploy a simple SPring Boot application
 
 *Note* if you don't specify a value for `configmap.greeting` a default value will be used
 
-2. TODO - Set up ingress
-
+## ConfigMap 
 
