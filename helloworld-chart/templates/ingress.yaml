@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   rules:
-    - host: "{{ .Values.ingress.host }}.{{ .Values.domain }}"
+    - host: "{{ .Values.ingress.host }}.{{ .Release.Namespace }}.{{ .Values.domain }}"
       http:
         paths:
           - path: /
