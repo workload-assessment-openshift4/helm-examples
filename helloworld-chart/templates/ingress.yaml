@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: example
-  namespace: fola-helm-tg
+  name: {{ include "helloworld-chart.fullname" . }}
+  namespace: {{ .Release.Namespace }}
 spec:
   rules:
-    - host: charts-example.local
+    - host: "{{ .Values.ingress.host }}.{{ .Release.Namespace }}.{{ .Values.domain }}"
       http:
         paths:
-          - path: /api/hello
+          - path: /
             backend:
               serviceName:  {{ include "helloworld-chart.fullname" . }}
               servicePort: 8080
