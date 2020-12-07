@@ -10,5 +10,7 @@ This chart will deploy a simple Spring Boot application.
 **Example**: 
 `helm install test . --set domain apps.cluster-ccf2.sandbox801.opentlc.com  --set configmap.greeting="Hello!"`
 
+**Note**: If upgrading or otherwise changing the ConfigMap, the pods will need to be recreated to retrieve the updated value.
+
 TODO: Maybe add possible variables and what they mean/affect?
 
