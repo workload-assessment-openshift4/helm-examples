@@ -3,7 +3,7 @@ This chart will deploy a simple Spring Boot application.
 
 ## Installation Guide
 
-After checking out the repo, Run the following command in *this* directory: 
+After checking out the repo, run the following command in *this* directory: 
 
 `helm install <name-of-app> .`
 
@@ -11,7 +11,7 @@ After checking out the repo, Run the following command in *this* directory:
 
 | Parameter                                 | Description                                                                                                          | Default                                                      |
 |-------------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| `configmap.greeting`                      | Greeting that will be displayed by the Spring application.                                                           | `This is the <environment> environment!`                     |
+| `configmap.greeting`                      | Greeting that will be displayed by the Spring application.                                                           | `This is amazing!`                     |
 
 
 **Note**: If upgrading or otherwise changing the ConfigMap, the pods will need to be recreated to retrieve the updated value.
@@ -43,6 +43,8 @@ Our `service.yaml` file describes the Service resource that will be created when
 #### route.yaml
 The `route.yaml` file is used to create a Route resource. A Route is a way to expose a Service by giving it an externally-reachable hostname such as: `www.example.com`. 
 
+#### configmap.yaml
+The `configmap.yaml` is used to create a ConfigMap resource. If there are any environment variables that you need to need to make avaialble to any of your applications you can define them in here.
 
 #### values.yaml file
 
