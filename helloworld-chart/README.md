@@ -16,8 +16,6 @@ After checking out the repo, Run the following command in *this* directory:
 
 **Note**: If upgrading or otherwise changing the ConfigMap, the pods will need to be recreated to retrieve the updated value.
 
-TODO: Documentation on relevant variables.
-
 ## Helm Chart Components
 
 ### Chart.yaml file
