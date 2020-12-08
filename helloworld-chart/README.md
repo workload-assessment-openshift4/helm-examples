@@ -40,4 +40,4 @@ Our 'service.yaml' file describes the _Service_ resource that will be created wh
 
 ### values.yaml
 
-The 'values.yaml' file provides us access to values passed into the Helm chart. Within this file we can customize values our application will utilize upon deployment. An advantage of the 'values.yaml' file is that its values can be referenced within other configuration files within the chart. This allows us to parameterize certain aspects of our 
+The 'values.yaml' file provides us access to values passed into the Helm chart. Within this file we can customize values our application will utilize upon deployment. An advantage of the 'values.yaml' file is that its values can be referenced within other configuration files within the chart. This allows us to parameterize fields in our other files saving time and providing clarity during the development process. 
