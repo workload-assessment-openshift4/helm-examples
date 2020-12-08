@@ -44,7 +44,7 @@ Our `service.yaml` file describes the Service resource that will be created when
 The `route.yaml` file is used to create a Route resource. A Route is a way to expose a Service by giving it an externally-reachable hostname such as: `www.example.com`. 
 
 #### configmap.yaml
-The `configmap.yaml` is used to create a ConfigMap resource. If there are any environment variables that you need to need to make avaialble to any of your applications you can define them in here.
+The `configmap.yaml` is used to create a ConfigMap resource. If there are any environment variables that you need to need to make avaialble to any of your applications or services you can define them in here.
 
 #### values.yaml file
 
