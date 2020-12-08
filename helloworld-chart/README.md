@@ -27,16 +27,16 @@ Deployments determine the basic details required to deploy an applicatin on Open
 
 Along with specifying the container image, Deployments also specify the number of replicas, or instances, of an application to deploy. Deployments can additionally define an application's resource limits, health checks, and volume mounts.
 
-Our `deployment.yaml` file will describe the _Deployment_ resource that will be created upon deployment of the Helm chart. 
+Our `deployment.yaml` file will describe the Deployment resource that will be created upon deployment of the Helm chart. 
 
 #### service.yaml
 
 A Service serves as an internal load balancer. Services allow users and other applicatoins to talk to each other by allocating a static IP address to a Service endpoint. A Service then uses a label selector to find all the containers running that provide a certain network service on a certain port. 
 
-Our `service.yaml` file describes the _Service_ resource that will be created when deploying the Helm chart.
+Our `service.yaml` file describes the Service resource that will be created when deploying the Helm chart.
 
 #### route.yaml
-
+The `route.yaml` file is used to create a Route resource. A Route is a way to expose a Service by giving it an externally-reachable hostname such as: `www.example.com`. 
 
 
 ### values.yaml file
