@@ -4,8 +4,6 @@
 
 replicaCount: 1
 
-domain: apps.cluster-ccf2.sandbox801.opentlc.com
-
 image:
   repository: quay.io/bszeti/fuse7hello
   pullPolicy: IfNotPresent
