@@ -7,11 +7,11 @@ After checking out the repo, Run the following command in *this* directory:
 
 `helm install <name-of-app> . --values=value-<environment>.yaml`
 
-# Parameters
+## Parameters
 
 | Parameter                                 | Description                                                                                                          | Default                                                      |
 |-------------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| `configmap.greeting`                      | Global Docker Image registry                                                                                         | `This is the <environment> environment!`                                                        |
+| `configmap.greeting`                      | Greeting that will be displayed by the Spring application.                                                           | `This is the <environment> environment!`                     |
 
 
 **Note**: If upgrading or otherwise changing the ConfigMap, the pods will need to be recreated to retrieve the updated value.
