@@ -59,7 +59,7 @@ service:
   port: 8080
 
 configmap:
-  greeting: "This is the dev environment!"
+  greeting: "This is the prod environment!"
 
 ingress:
   enabled: true
