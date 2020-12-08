@@ -5,7 +5,7 @@ This chart will deploy a simple Spring Boot application.
 
 After checking out the repo, Run the following command in *this* directory: 
 
-`helm install <name-of-app> . --values=value-<environment>.yaml`
+`helm install <name-of-app> .`
 
 ## Parameters
 
@@ -30,7 +30,7 @@ The templates/ directory is one of the most integral parts of a Helm chart. The 
 
 #### deployment.yaml
 
-Deployments determine the basic details required to deploy an applicatin on OpenShift. One of these basic details consists of the container image that Openshift should deploy. 
+Deployments determine the basic details required to deploy an application on OpenShift. One of these basic details consists of the container image that Openshift should deploy. 
 
 Along with specifying the container image, Deployments also specify the number of replicas, or instances, of an application to deploy. Deployments can additionally define an application's resource limits, health checks, and volume mounts.
 
@@ -38,7 +38,7 @@ Our `deployment.yaml` file will describe the Deployment resource that will be cr
 
 #### service.yaml
 
-A Service serves as an internal load balancer. Services allow users and other applicatoins to talk to each other by allocating a static IP address to a Service endpoint. A Service then uses a label selector to find all the containers running that provide a certain network service on a certain port. 
+A Service serves as an internal load balancer. Services allow users and other applications to talk to each other by allocating a static IP address to a Service endpoint. A Service then uses a label selector to find all the containers running that provide a certain network service on a certain port. 
 
 Our `service.yaml` file describes the Service resource that will be created when deploying the Helm chart.
 
@@ -46,6 +46,10 @@ Our `service.yaml` file describes the Service resource that will be created when
 The `route.yaml` file is used to create a Route resource. A Route is a way to expose a Service by giving it an externally-reachable hostname such as: `www.example.com`. 
 
 
-### values.yaml file
+#### values.yaml file
 
-The `values.yaml` file provides us access to values passed into the Helm chart. Within this file we can customize values our application will utilize upon deployment. An advantage of the `values.yaml` file is that its values can be referenced within other configuration files within the chart. This allows us to parameterize fields in our other files saving time and providing clarity during the development process. 
+The `values.yaml` file provides us access to values passed into the Helm templates. Within this file we can customize values our Openshift resources will utilize upon installation of the chart into the cluster. These values can also be overriden with the `--set` command upon installation of a chart.
+
+This file is the default file when performing helm installations; if you have any additional variables or variables you want to overwrite you can create another values file and pass it as a parameter when running the helm command.
+
+**Ex**: `helm install <name-of-app> . --set configmap.greeting="Hey there!" --values=values-dev.yaml`
