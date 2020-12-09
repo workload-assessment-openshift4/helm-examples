@@ -59,7 +59,7 @@ service:
   port: 8080
 
 configmap:
-  greeting: "Life is good"
+  greeting: "This is amazing!"
 
 ingress:
   enabled: true

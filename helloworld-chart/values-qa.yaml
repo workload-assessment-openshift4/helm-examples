@@ -1,0 +1,2 @@
+configmap:
+  greeting: "This is the QA environment!"
