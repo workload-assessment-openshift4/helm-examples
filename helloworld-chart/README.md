@@ -77,7 +77,7 @@ If you'd like to start sending traffic to a Pod only when a probe succeeds, spec
 
 If you want your container to be able to take itself down for maintenance, you can specify a readiness probe that checks an endpoint specific to readiness that is different from the liveness probe.
 
-## Initializing Probes in Helm Chart* 
+## Initializing Probes in Helm Chart
 
 Navigate to the _values.yaml_ in your new chart's  directory.
     
