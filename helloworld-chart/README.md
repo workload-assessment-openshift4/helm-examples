@@ -54,34 +54,33 @@ This file is the default file when performing helm installations; if you have an
 
 The `values.yaml` file provides us access to values passed into the Helm chart. Within this file we can customize values our application will utilize upon deployment. An advantage of the `values.yaml` file is that its values can be referenced within other configuration files within the chart. This allows us to parameterize fields in our other files saving time and providing clarity during the development process. 
 
-=== Creating Liveness and Readiness Probes in Helm Charts
+# Creating Liveness and Readiness Probes in Helm Charts
 In software systems, components can become unhealthy due to transient issues (such as temporary connectivity loss), configuration errors, or problems with external dependencies. OpenShift Container Platform applications have a number of options to detect and handle unhealthy containers.
 
-*Liveness Probe*
+## Liveness Probe
 
 A liveness probe checks if the container in which it is configured is still running. If the liveness probe fails, the kubelet kills the container, which will be subjected to its restart policy.
 
-*When to use a Liveness Probe*
+## When to use a Liveness Probe
 
 If you'd like your container to be killed and restarted if a probe fails, then specify a liveness probe, and specify a restartPolicy of Always or OnFailure.
 
 If the process in your container is able to crash on its own whenever it encounters an issue or becomes unhealthy, you do not necessarily need a liveness probe; the kubelet will automatically perform the correct action in accordance with the Pod's restartPolicy.
 
-*Readiness Probe*
+## Readiness Probe
 
 A readiness probe determines if a container is ready to service requests. If the readiness probe fails a container, the endpoints controller ensures the container has its IP address removed from the endpoints of all services. A readiness probe can be used to signal to the endpoints controller that even though a container is running, it should not receive any traffic from a proxy.
 
-*When to use a Readiness Probe*
+## When to use a Readiness Probe
 
 If you'd like to start sending traffic to a Pod only when a probe succeeds, specify a readiness probe. In this case, the readiness probe might be the same as the liveness probe, but the existence of the readiness probe in the spec means that the Pod will start without receiving any traffic and only start receiving traffic after the probe starts succeeding. If your container needs to work on loading large data, configuration files, or migrations during startup, specify a readiness probe.
 
 If you want your container to be able to take itself down for maintenance, you can specify a readiness probe that checks an endpoint specific to readiness that is different from the liveness probe.
 
-*Initializing Probes in Helm Chart* 
+## Initializing Probes in Helm Chart* 
 
-. Navigate to the _values.yaml_ in your new chart's  directory.
+Navigate to the _values.yaml_ in your new chart's  directory.
     
-+
 ```yaml
 livenessProbe:
   enabled: true
@@ -110,9 +109,9 @@ readinessProbe:
 
     successThreshold:: Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup Probes. Minimum value is 1.
 
-. Navigate to the _deployments.yaml_ file in your templates directory.
+Navigate to the _deployments.yaml_ file in your templates directory.
 
-. Reference configurations made in _values.yaml_ file in the Liveness and Readiness fields
+Reference configurations made in _values.yaml_ file in the Liveness and Readiness fields
 +
 ```yaml
         {{- if .Values.livenessProbe.enabled }}
